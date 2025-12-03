@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/styles/accueil.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./src/styles/accueil.css" />
     <title>MariDex</title>
   </head>
   <body>
     <header>
-        <div id="logo_menu">
-          <img alt="logo MariDex" src="src/images/logo.png">
-          <p>MariDex</p>
-        </div>
+      <div id="logo-container">
+        <img alt="Logo de Maridex" src="./src/images/logo.png" />
+        <h1>MariDex</h1>
+      </div>
     </header>
 
+    <main>
+      <section id="introduction">
+        <h2>RECHERCHE SUR MARIDEX</h2>
+        <p>Trouver rapidement toutes les informations sur vos Pokémon préférées !</p>
+      </section>
 
-    <div class="bloc_texte">
-      <h3>RECHERCHE SUR MARIDEX</h3>
-      <p>Trouver rapidement toutes les informations sur vos Pokémon préférées !</p>
-    </div>
-
-    <form>
-      <label for="noPokemon">Numéro du Pokémon</label>
-      <input type="number" id="noPokemon" name="noPokemon" placeholder="Exemple: 22">
-    </form>
-
+      <form>
+        <label for="pokemon-number">Numéro du Pokémon</label>
+        <div>
+          <input type="number" id="pokemon-number" min="1" max="1025" placeholder="Exemple : 22" />
+          <button type="submit">SEARCH</button>
+        </div>
+      </form>
+    </main>
   </body>
 </html>

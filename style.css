@@ -1,10 +1,27 @@
+/*----------------------------FONT------------------------------*/
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("./src/font/montserrat-regular.ttf");
+}
+
+@font-face {
+  font-family: "montserrat-semibold";
+  src: url("./src/font/montserrat-semibold.ttf");
+}
+
+/*----------------------------GÉNÉRAL---------------------------*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #2f2f2f;
 }
 
 :root {
+  --main-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  --green-gradiant: linear-gradient(90deg, rgba(104, 191, 30, 1) 0%, rgba(154, 204, 50, 1) 100%);
+  --font-color: #2f2f2f;
 }
 
 html,
@@ -13,4 +30,50 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  background-image: url("./src/images/fond_transparent.svg");
+}
+
+/*----------------------------HEADER----------------------------*/
+
+header {
+  width: 100%;
+  height: 45px;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-image: url("./src/images/fond.svg");
+}
+
+header #logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header #logo-container img {
+  height: 100%;
+}
+
+header #logo-container h1 {
+  font-family: "montserrat-semibold", serif;
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+/*----------------------------MAIN----------------------------*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+/*----------------------------FOOTER----------------------------*/
+
+footer {
 }
