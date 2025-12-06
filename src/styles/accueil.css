@@ -11,13 +11,13 @@ main #introduction {
 
 main #introduction h2 {
   font-size: 1rem;
-  font-family: "montserrat-regular", serif;
+  font-family: "montserrat-semibold", serif;
   color: white;
 }
 
 main #introduction p {
   font-size: 0.75rem;
-  font-family: "montserrat-semibold", serif;
+  font-family: "montserrat-light", serif;
   color: white;
 }
 
