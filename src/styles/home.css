@@ -98,3 +98,12 @@ main form div button {
 main form div button img {
   width: 20px;
 }
+
+body .grille {
+  display: grid;
+  width: 83%;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
