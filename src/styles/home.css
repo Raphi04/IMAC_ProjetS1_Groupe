@@ -99,10 +99,21 @@ main form div button img {
   width: 20px;
 }
 
-body .grille {
+main section#random-pokemon-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main section#random-pokemon-container h2 {
+  font-size: 1rem;
+  font-family: "montserrat-regular", serif;
+  font-weight: 500;
+}
+
+main section .grille {
+  width: 100%;
   display: grid;
-  width: 83%;
-  height: auto;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;

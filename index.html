@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./src/styles/home.css" />
+    <link rel="stylesheet" href="./src/styles/pokemon_card.css" />
     <title>MariDex - Home</title>
     <link rel="icon" type="image/x-icon" href="./src/images/logo.png" />
   </head>
@@ -35,8 +36,11 @@
           </button>
         </div>
       </form>
-      <h2>Pokémon aléatoire</h2>
-      <div class="grille"></div>
+
+      <section id="random-pokemon-container">
+        <h2>Random Pokémons</h2>
+        <div class="grille"></div>
+      </section>
       <script src="./script.js"></script>
     </main>
 
@@ -53,5 +57,9 @@
       type="module"
       src="./src/scripts/components/MariDexFooter.js"
     ></script>
+    <script
+      type="module"
+      src="./src/scripts/getPokemon.js"></script>
+    </script>
   </body>
 </html>

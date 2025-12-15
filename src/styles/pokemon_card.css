@@ -1,37 +1,33 @@
 .rectangle {
-  padding-top: 20px;
-  background: #f2f4f7;
-  border-radius: 8px;
   width: 100%;
-  aspect-ratio: 154 / 172;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-}
-.rectangle p {
-  font-size: 32px;
-}
-.cercle {
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  background: #f2f4f7;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  box-shadow: var(--main-box-shadow);
+}
+.rectangle p {
+  font-size: 1rem;
+}
+.rectangle .cercle {
+  position: relative;
+  width: 75%;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   background: radial-gradient(
     54.81% 54.81% at 50% 50%,
     #e4ffaa 40%,
     #68bf1e 100%
   );
-  position: relative;
-  /*z-index: 0;*/
 }
 
 body .cercle img {
   position: absolute;
-  width: auto;
-  height: 300px;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
 }

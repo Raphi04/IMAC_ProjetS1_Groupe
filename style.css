@@ -87,6 +87,7 @@ header #logo-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 }
 
 header #logo-container img {

@@ -34,7 +34,7 @@ function createPokemonHTML(pokemon_infos) {
   pokemon_container.classList.add("rectangle");
 
   let pokemon_name = document.createElement("p");
-  pokemon_name.innertext = pokemon_infos.name;
+  pokemon_name.innerHTML = pokemon_infos.name;
   pokemon_container.appendChild(pokemon_name);
 
   let pokemon_type_circle = document.createElement("div");
