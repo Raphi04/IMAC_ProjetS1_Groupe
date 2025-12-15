@@ -15,10 +15,22 @@ main #introduction h2 {
   color: white;
 }
 
+@media screen and (min-width: 1024px) {
+  main #introduction h2 {
+    font-size: 1.2rem;
+  }
+}
+
 main #introduction p {
   font-size: 0.75rem;
   font-family: "montserrat-light", serif;
   color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  main #introduction p {
+    font-size: 1rem;
+  }
 }
 
 main form {
@@ -31,6 +43,12 @@ main form {
 main form label {
   font-size: 1rem;
   font-family: "montserrat-regular", serif;
+}
+
+@media screen and (min-width: 1024px) {
+  main form label {
+    font-size: 1.2rem;
+  }
 }
 
 main form div {
@@ -49,6 +67,13 @@ main form div input {
   box-shadow: var(--main-box-shadow);
 }
 
+@media screen and (min-width: 1024px) {
+  main form div input {
+    padding: 0.75rem 0.75rem 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
 main form div input::placeholder {
   font-style: italic;
 }
@@ -58,7 +83,8 @@ main form div input {
 }
 
 main form div button {
-  padding: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,4 +92,9 @@ main form div button {
   border: none;
   border-radius: 4px;
   background-color: var(--font-color);
+  box-shadow: var(--main-box-shadow);
+}
+
+main form div button img {
+  width: 20px;
 }
