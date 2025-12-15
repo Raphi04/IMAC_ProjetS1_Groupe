@@ -3,60 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./src/styles/accueil.css" />
-    <title>MariDex</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/styles/home.css" />
+    <title>MariDex - Home</title>
     <link rel="icon" type="image/x-icon" href="./src/images/logo.png" />
   </head>
   <body>
-    <header>
-      <div id="logo-container">
-        <img alt="Logo de Maridex" src="./src/images/logo.png" />
-        <h1>MariDex</h1>
-      </div>
-    </header>
+    <maridex-header images-path="./src/images/" pages-path="./"></maridex-header>
 
     <main>
       <section id="introduction">
-        <h2>RECHERCHE SUR MARIDEX</h2>
-        <p>Trouver rapidement toutes les informations sur vos Pokémon préférées !</p>
+        <h2>SEARCH ON MARIDEX</h2>
+        <p>Quickly find all informations about your favorites Pokémons !</p>
       </section>
 
       <form>
-        <label for="pokemon-number">Numéro du Pokémon</label>
+        <label for="pokemon-number">Pokémon's Number</label>
         <div>
-          <input type="number" id="pokemon-number" min="1" max="1025" placeholder="Exemple : 22" />
-          <button type="submit">SEARCH</button>
+          <input type="number" id="pokemon-number" min="1" max="1025" placeholder="Exemple : 650" />
+          <button type="submit"><img src="./src/images/search_icon.png" alt="" /></button>
         </div>
       </form>
     </main>
 
-    <footer>
-      <div id="footer-wrapper">
-        <div>
-          <section>
-            <h3>Plan du site</h3>
-            <nav>
-              <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="pages/velos.html">A&nbsp;propos</a></li>
-                <li><a href="pages/itineraires.html">Pokédex</a></li>
-              </ul>
-            </nav>
-          </section>
-
-          <p>
-            Ce site a été créé à l'occasion d'un projet de premier semestre de la
-            <b>formation IMAC</b>.
-          </p>
-
-          <div id="image-wrapper">
-            <img src="./src/images/logo.png" alt="Logo" />
-          </div>
-        </div>
-
-        <p>© Tous droits réservés - MariDex 2025</p>
-      </div>
-    </footer>
+    <maridex-footer images-path="./src/images/" pages-path="./"></maridex-footer>
+    <script type="module" src="./src/scripts/components/MariDexHeader.js"></script>
+    <script type="module" src="./src/scripts/components/MariDexFooter.js"></script>
   </body>
 </html>
