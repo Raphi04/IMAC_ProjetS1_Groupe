@@ -17,11 +17,69 @@ class PokemonCard extends HTMLElement {
       <div class="pokemon-card">
         ${pokemon_name ? `<p>${pokemon_name}</p>` : ""}
 
-        <div class="circle">
+        <div class="circle ${this.check_pokemon_type(pokemon_type)}">
           <img src="${pokemon_url}" alt="" />
         </div>
       </div>
     `;
+  }
+
+  check_pokemon_type(pokemon_type) {
+    switch (pokemon_type) {
+      case "bug":
+        return "bug";
+
+      case "dark":
+        return "dark";
+
+      case "dragon":
+        return "dragon";
+
+      case "electric":
+        return "electric";
+
+      case "fairy":
+        return "fairy";
+
+      case "fighting":
+        return "fighting";
+
+      case "fire":
+        return "fire";
+
+      case "flying":
+        return "flying";
+
+      case "ghost":
+        return "ghost";
+
+      case "grass":
+        return "grass";
+
+      case "ground":
+        return "ground";
+
+      case "ice":
+        return "ice";
+
+      case "normal":
+        return "normal";
+
+      case "poison":
+        return "poison";
+
+      case "psychic":
+        return "psychic";
+
+      case "rock":
+        return "rock";
+
+      case "steel":
+        return "steel";
+
+      case "water":
+        return "water";
+    }
   }
 }
 

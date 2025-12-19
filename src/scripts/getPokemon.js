@@ -2,9 +2,13 @@ const apiurl = "https://pokeapi.co/api/v2/";
 
 function random_number(count, max, min) {
   let list_number = [];
+
   while (list_number.length < count) {
     const random_nb = Math.floor(Math.random() * (max - min + 1)) + min;
-    list_number.push(random_nb);
+
+    if (!list_number.includes(random_nb)) {
+      list_number.push(random_nb);
+    }
   }
   return list_number;
 }
@@ -26,10 +30,15 @@ async function getPokemonsById(list_number) {
   return all_pokemon;
 }
 
-function createPokemonHTML(pokemon_infos) {
+function createPokemonCardsHTML(pokemon_infos, with_name) {
+  console.log(pokemon_infos);
   const pokemon_card = document.createElement("pokemon-card");
-  pokemon_card.setAttribute("pokemon-name", pokemon_infos.name);
+  if (with_name) {
+    pokemon_card.setAttribute("pokemon-name", pokemon_infos.name);
+  }
+
   pokemon_card.setAttribute("pokemon-url", pokemon_infos.sprites.front_default);
+  pokemon_card.setAttribute("pokemon-type", pokemon_infos.types[0].type.name);
 
   return pokemon_card;
 }
@@ -43,7 +52,7 @@ async function getRandomPokemons() {
     const pokemon_container = document.createElement("a");
     pokemon_container.href = "../../pages/pokemon_details.html?id=" + pokemon_infos.id;
     pokemon_container.classList.add("pokemon-card-container");
-    pokemon_container.appendChild(createPokemonHTML(pokemon_infos));
+    pokemon_container.appendChild(createPokemonCardsHTML(pokemon_infos));
 
     document.getElementsByClassName("grille")[0].appendChild(pokemon_container);
   }
