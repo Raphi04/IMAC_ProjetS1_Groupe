@@ -24,15 +24,33 @@
 
 :root {
   --font-color: #2f2f2f;
+  --green-gradient: linear-gradient(90deg, rgba(104, 191, 30, 1) 0%, rgba(154, 204, 50, 1) 100%);
 
+  /*Les images de fonds*/
   --background-pokemon-black: url("./src/images/fond.png");
   --background-pokemon-white: url("./src/images/fond-transparent.png");
-  --green-gradiant: linear-gradient(
-    90deg,
-    rgba(104, 191, 30, 1) 0%,
-    rgba(154, 204, 50, 1) 100%
-  );
 
+  /* Les dégradés des types */
+  --bug-gradient: linear-gradient(90deg, rgb(135, 191, 30) 0%, rgb(171, 204, 50) 100%);
+  --dark-gradient: linear-gradient(90deg, rgb(39, 39, 39) 0%, rgb(21, 21, 21) 100%);
+  --dragon-gradient: linear-gradient(90deg, rgb(85, 89, 130) 0%, rgb(69, 72, 107) 100%);
+  --electric-gradient: linear-gradient(90deg, rgb(236, 240, 9) 0%, rgb(219, 223, 7) 100%);
+  --fairy-gradient: linear-gradient(90deg, rgb(218, 18, 121) 0%, rgb(185, 15, 103) 100%);
+  --fighting-gradient: linear-gradient(90deg, rgb(174, 99, 0) 0%, rgb(142, 80, 0) 100%);
+  --fire-gradient: linear-gradient(90deg, rgb(191, 30, 30) 0%, rgb(204, 50, 50) 100%);
+  --flying-gradient: linear-gradient(90deg, rgb(135, 167, 184) 0%, rgb(102, 126, 138) 100%);
+  --ghost-gradient: linear-gradient(90deg, rgb(119, 95, 120) 0%, rgb(92, 74, 93) 100%);
+  --grass-gradient: linear-gradient(90deg, rgba(104, 191, 30, 1) 0%, rgba(154, 204, 50, 1) 100%);
+  --ground-gradient: linear-gradient(90deg, rgb(108, 61, 0) 0%, rgb(52, 30, 1) 100%);
+  --ice-gradient: linear-gradient(90deg, rgb(141, 229, 232) 0%, rgb(123, 199, 201) 100%);
+  --normal-gradient: linear-gradient(90deg, rgb(205, 205, 205) 0%, rgb(174, 174, 174) 100%);
+  --poison-gradient: linear-gradient(90deg, rgb(143, 38, 140) 0%, rgb(112, 30, 109) 100%);
+  --psychic-gradient: linear-gradient(90deg, rgb(255, 77, 219) 0%, rgb(230, 71, 198) 100%);
+  --rock-gradient: linear-gradient(90deg, rgb(190, 97, 16) 0%, rgb(163, 83, 14) 100%);
+  --steel-gradient: linear-gradient(90deg, rgb(119, 119, 119) 0%, rgb(146, 146, 146) 100%);
+  --water-gradient: linear-gradient(90deg, rgb(30, 119, 191) 0%, rgb(50, 94, 204) 100%);
+
+  /* Les shadow-box */
   --main-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -50,12 +68,26 @@ body {
   background-image: var(--background-pokemon-white);
 }
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    overflow: auto !important;
+  }
+}
+
 body main {
   flex: 1;
 }
 
 body maridex-header {
   width: 100%;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
 
 body maridex-footer {
@@ -65,7 +97,6 @@ body maridex-footer {
 /*----------------------------HEADER----------------------------*/
 
 header {
-  position: relative;
   width: 100%;
   height: 45px;
   padding: 0.5rem 2rem;

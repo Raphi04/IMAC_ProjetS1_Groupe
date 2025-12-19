@@ -2,9 +2,13 @@ const apiurl = "https://pokeapi.co/api/v2/";
 
 function random_number(count, max, min) {
   let list_number = [];
+
   while (list_number.length < count) {
     const random_nb = Math.floor(Math.random() * (max - min + 1)) + min;
-    list_number.push(random_nb);
+
+    if (!list_number.includes(random_nb)) {
+      list_number.push(random_nb);
+    }
   }
   return list_number;
 }
@@ -26,39 +30,31 @@ async function getPokemonsById(list_number) {
   return all_pokemon;
 }
 
-function createPokemonHTML(pokemon_infos) {
+function createPokemonCardsHTML(pokemon_infos, with_name) {
   console.log(pokemon_infos);
+  const pokemon_card = document.createElement("pokemon-card");
+  if (with_name) {
+    pokemon_card.setAttribute("pokemon-name", pokemon_infos.name);
+  }
 
-  let pokemon_container = document.createElement("a");
-  pokemon_container.src = pokemon_infos;
-  pokemon_container.classList.add("rectangle");
+  pokemon_card.setAttribute("pokemon-url", pokemon_infos.sprites.front_default);
+  pokemon_card.setAttribute("pokemon-type", pokemon_infos.types[0].type.name);
 
-  let pokemon_name = document.createElement("p");
-  pokemon_name.innerHTML = pokemon_infos.name;
-  pokemon_container.appendChild(pokemon_name);
-
-  let pokemon_type_circle = document.createElement("div");
-  pokemon_type_circle.classList.add("cercle");
-  pokemon_container.appendChild(pokemon_type_circle);
-
-  let pokemon_image = document.createElement("img");
-  pokemon_image.src = pokemon_infos.sprites.front_default;
-  pokemon_type_circle.appendChild(pokemon_image);
-
-  const grillePokemon = document
-    .getElementsByClassName("grille")[0]
-    .appendChild(pokemon_container);
+  return pokemon_card;
 }
 
+//Accueil
 async function getRandomPokemons() {
   const random_pokemon = random_number(6, 1025, 1);
   const pokemons_infos = await getPokemonsById(random_pokemon);
 
-  console.log(random_pokemon);
-  console.log(pokemons_infos);
-
   for (const pokemon_infos of pokemons_infos) {
-    createPokemonHTML(pokemon_infos);
+    const pokemon_container = document.createElement("a");
+    pokemon_container.href = "../../pages/pokemon_details.html?id=" + pokemon_infos.id;
+    pokemon_container.classList.add("pokemon-card-container");
+    pokemon_container.appendChild(createPokemonCardsHTML(pokemon_infos));
+
+    document.getElementsByClassName("grille")[0].appendChild(pokemon_container);
   }
 }
 

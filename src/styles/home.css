@@ -5,7 +5,7 @@ main #introduction {
   flex-direction: column;
   gap: 0.5rem;
   border-radius: 8px;
-  background: var(--green-gradiant);
+  background: var(--green-gradient);
   box-shadow: var(--main-box-shadow);
 }
 

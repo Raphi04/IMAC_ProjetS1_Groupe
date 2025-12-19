@@ -1,30 +1,113 @@
-.rectangle {
+.pokemon-card-container {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.pokemon-card {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f2f4f7;
-  border-radius: 8px;
+  gap: 0.5rem;
   aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  background: #f2f4f7;
   box-shadow: var(--main-box-shadow);
 }
-.rectangle p {
+
+.pokemon-card p {
   font-size: 1rem;
 }
-.rectangle .cercle {
+
+.pokemon-card .circle {
   position: relative;
   width: 75%;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: radial-gradient(
-    54.81% 54.81% at 50% 50%,
-    #e4ffaa 40%,
-    #68bf1e 100%
-  );
 }
 
-body .cercle img {
+.pokemon-card .circle.bug {
+  background: var(--bug-gradient);
+}
+
+.pokemon-card .circle.dark {
+  background: var(--dark-gradient);
+}
+
+.pokemon-card .circle.dragon {
+  background: var(--dragon-gradient);
+}
+
+.pokemon-card .circle.electric {
+  background: var(--electric-gradient);
+}
+
+.pokemon-card .circle.fairy {
+  background: var(--fairy-gradient);
+}
+
+.pokemon-card .circle.fighting {
+  background: var(--fighting-gradient);
+}
+
+.pokemon-card .circle.fire {
+  background: var(--fire-gradient);
+}
+
+.pokemon-card .circle.flying {
+  background: var(--flying-gradient);
+}
+
+.pokemon-card .circle.grass {
+  background: var(--grass-gradient);
+}
+
+.pokemon-card .circle.ghost {
+  background: var(--ghost-gradient);
+}
+
+.pokemon-card .circle.grass {
+  background: var(--grass-gradient);
+}
+
+.pokemon-card .circle.ground {
+  background: var(--ground-gradient);
+}
+
+.pokemon-card .circle.grass {
+  background: var(--grass-gradient);
+}
+
+.pokemon-card .circle.ice {
+  background: var(--ice-gradient);
+}
+
+.pokemon-card .circle.normal {
+  background: var(--normal-gradient);
+}
+
+.pokemon-card .circle.poison {
+  background: var(--poison-gradient);
+}
+
+.pokemon-card .circle.psychic {
+  background: var(--psychic-gradient);
+}
+
+.pokemon-card .circle.rock {
+  background: var(--rock-gradient);
+}
+
+.pokemon-card .circle.steel {
+  background: var(--steel-gradient);
+}
+
+.pokemon-card .circle.water {
+  background: var(--water-gradient);
+}
+
+.pokemon-card .circle img {
   position: absolute;
   top: 50%;
   left: 50%;
