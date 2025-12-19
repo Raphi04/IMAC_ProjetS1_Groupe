@@ -57,6 +57,7 @@ class MariDexHeader extends HTMLElement {
 
       const phone_menu = document.getElementById("phone-menu");
       phone_menu.classList.toggle("open");
+      document.querySelector("body").classList.toggle("overflow-hidden");
     });
   }
 }

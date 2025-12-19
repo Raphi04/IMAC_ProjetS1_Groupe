@@ -68,12 +68,26 @@ body {
   background-image: var(--background-pokemon-white);
 }
 
+body.overflow-hidden {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    overflow: auto !important;
+  }
+}
+
 body main {
   flex: 1;
 }
 
 body maridex-header {
   width: 100%;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
 }
 
 body maridex-footer {
@@ -83,7 +97,6 @@ body maridex-footer {
 /*----------------------------HEADER----------------------------*/
 
 header {
-  position: relative;
   width: 100%;
   height: 45px;
   padding: 0.5rem 2rem;
