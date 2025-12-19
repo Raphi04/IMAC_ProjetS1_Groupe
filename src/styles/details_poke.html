@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./src/styles/home.css" />
+    <link rel="stylesheet" href="./src/styles/pokemon_card.css" />
+    <title>MariDex - Home</title>
+    <link rel="icon" type="image/x-icon" href="./src/images/logo.png" />
+  </head>
+  <body>
+    <maridex-header
+      images-path="./src/images/"
+      pages-path="./"
+    ></maridex-header>
+
+    <main>
+      <section id="introduction">
+        <h2>SEARCH ON MARIDEX</h2>
+        <p>Quickly find all informations about your favorites Pokémons !</p>
+      </section>
+
+      <form>
+        <label for="pokemon-number">Pokémon's Number</label>
+        <div>
+          <input
+            type="number"
+            id="pokemon-number"
+            min="1"
+            max="1025"
+            placeholder="Exemple : 650"
+          />
+          <button type="submit">
+            <img src="./src/images/search_icon.png" alt="" />
+          </button>
+        </div>
+      </form>
+
+      <section id="random-pokemon-container">
+        <h2>Random Pokémons</h2>
+        <div class="grille"></div>
+      </section>
+      <script src="./script.js"></script>
+    </main>
+  </body>
+</html>
