@@ -1,4 +1,4 @@
-main #introduction {
+main section#introduction {
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -9,26 +9,26 @@ main #introduction {
   box-shadow: var(--main-box-shadow);
 }
 
-main #introduction h2 {
+main section#introduction h2 {
   font-size: 1rem;
   font-family: "montserrat-semibold", serif;
   color: white;
 }
 
 @media screen and (min-width: 1024px) {
-  main #introduction h2 {
+  main section#introduction h2 {
     font-size: 1.2rem;
   }
 }
 
-main #introduction p {
+main section#introduction p {
   font-size: 0.75rem;
   font-family: "montserrat-light", serif;
   color: white;
 }
 
 @media screen and (min-width: 1024px) {
-  main #introduction p {
+  main section#introduction p {
     font-size: 1rem;
   }
 }
@@ -111,7 +111,7 @@ main section#random-pokemon-container h2 {
   font-weight: 500;
 }
 
-main section .grille {
+main section#random-pokemon-container #pokemon-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

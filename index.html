@@ -21,10 +21,11 @@
         <p>Quickly find all informations about your favorites Pokémons !</p>
       </section>
 
-      <form>
+      <form name="search_pokemon">
         <label for="pokemon-number">Pokémon's Number</label>
         <div>
           <input
+            name="pokemon_id"
             type="number"
             id="pokemon-number"
             min="1"
@@ -37,13 +38,35 @@
         </div>
       </form>
 
-      <section id="pokemon-details"></section>
+      <section id="random-pokemon-container">
+        <h2>Random Pokémons</h2>
+        <div id="pokemon-grid"></div>
+      </section>
     </main>
-    <script src="./getDetails.js"></script>
 
-    <!--pour avoir la barre en haut et en bas-->
-    <maridex-footer images-path="../src/images/" pages-path="../"></maridex-footer>
-    <script type="module" src="../src/scripts/components/MariDexHeader.js"></script>
-    <script type="module" src="../src/scripts/components/MariDexFooter.js"></script>
+    <maridex-footer
+      images-path="./src/images/"
+      pages-path="./"
+    ></maridex-footer>
+
+    <script
+      type="module"
+      src="./src/scripts/components/MariDexHeader.js"
+    ></script>
+
+    <script
+      type="module"
+      src="./src/scripts/components/MariDexFooter.js"
+    ></script>
+
+    <script
+      type="module"
+      src="./src/scripts/components/PokemonCard.js"
+    ></script>
+
+    <script
+      type="module"
+      src="./src/scripts/getPokemonForHome.js"></script>
+    </script>
   </body>
 </html>
