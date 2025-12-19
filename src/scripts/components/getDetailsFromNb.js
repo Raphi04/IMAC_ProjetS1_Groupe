@@ -24,14 +24,14 @@ async function displayPokemon() {
 
   // cree el html
   const container = document.getElementById("pokemon-details");
-  container.innerHTML = ""; // vide le container wtf ?
+  container.innerHTML = "";
 
   const nameEl = document.createElement("h2"); //nom
   nameEl.textContent = name;
 
   const imgEl = document.createElement("img"); //img
   imgEl.src = image;
-  // C EST CHAT GPT PR LES JOINS
+
   const typesEl = document.createElement("p"); //type
   typesEl.textContent =
     "Types: " + data.types.map((t) => t.type.name).join(", ");
@@ -39,7 +39,7 @@ async function displayPokemon() {
   const statsEl = document.createElement("p"); //stat
   statsEl.textContent =
     "Stats: " +
-    data.stats.map((s) => `${s.stat.name}: ${s.base_stat}`).join(", "); //AU SECOURS
+    data.stats.map((s) => `${s.stat.name}: ${s.base_stat}`).join(", ");
 
   //taille et poids
   const sizeEl = document.createElement("p");
@@ -52,7 +52,7 @@ async function displayPokemon() {
   container.appendChild(statsEl);
   container.appendChild(sizeEl);
 }
-// NAN MAIS LA J AI PAS CAPTE MAIS JE DROP QD MM
+// à simplifier
 // Ajouter un event listener sur le formulaire ou le bouton
 const form = document.querySelector("form");
 
