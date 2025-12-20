@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MariDex - Home</title>
+
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./src/styles/home.css" />
-    <link rel="stylesheet" href="./src/styles/pokemon_card.css" />
-    <title>MariDex - Home</title>
+    <link rel="stylesheet" href="./src/styles/pokemon-card.css" />
     <link rel="icon" type="image/x-icon" href="./src/images/logo.png" />
   </head>
+
   <body>
     <maridex-header
       images-path="./src/images/"
@@ -17,15 +20,15 @@
 
     <main>
       <section id="introduction">
-        <h2>SEARCH ON MARIDEX</h2>
+        <h1>SEARCH ON MARIDEX</h1>
         <p>Quickly find all informations about your favorites Pokémons !</p>
       </section>
 
-      <form name="search_pokemon">
+      <form name="searchPokemon">
         <label for="pokemon-number">Pokémon's Number</label>
         <div>
           <input
-            name="pokemon_id"
+            name="pokemonId"
             type="number"
             id="pokemon-number"
             min="1"
@@ -51,22 +54,22 @@
 
     <script
       type="module"
-      src="./src/scripts/components/MariDexHeader.js"
+      src="./src/scripts/components/maridex-header.js"
     ></script>
 
     <script
       type="module"
-      src="./src/scripts/components/MariDexFooter.js"
+      src="./src/scripts/components/maridex-footer.js"
     ></script>
 
     <script
       type="module"
-      src="./src/scripts/components/PokemonCard.js"
+      src="./src/scripts/components/pokemon-card.js"
     ></script>
 
     <script
       type="module"
-      src="./src/scripts/getPokemonForHome.js"></script>
+      src="./src/scripts/get-pokemon-for-home.js"></script>
     </script>
   </body>
 </html>

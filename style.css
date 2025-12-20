@@ -186,18 +186,18 @@ header div#header-wrapper {
   justify-content: space-between;
 }
 
-header #logo-container {
+header a#logo-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
 }
 
-header #logo-container img {
+header a#logo-container img {
   height: 100%;
 }
 
-header #logo-container h1 {
+header a#logo-container h1 {
   font-family: "montserrat-semibold", serif;
   font-size: 1rem;
   margin: 0;
@@ -270,30 +270,30 @@ header div#phone-menu {
   }
 }
 
-header #phone-menu nav {
+header div#phone-menu nav {
   width: 100%;
   padding: 0.5rem 2rem;
 }
 
-header #phone-menu nav ul {
+header div#phone-menu nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-header #phone-menu nav ul li {
+header div#phone-menu nav ul li {
   padding: 0.5rem 0;
   text-wrap: nowrap;
   border-bottom: 1px solid white;
 }
 
-header #phone-menu nav ul li a {
+header div#phone-menu nav ul li a {
   color: white;
   text-decoration: none;
 }
 
-header #phone-menu.open {
+header div#phone-menu.open {
   width: 100%;
 }
 
@@ -321,7 +321,7 @@ main section#introduction {
   box-shadow: var(--main-box-shadow);
 }
 
-main section#introduction h2 {
+main section#introduction h1 {
   font-size: 1rem;
   font-family: "montserrat-semibold", serif;
   color: white;
@@ -427,6 +427,10 @@ footer div#footer-wrapper div section nav ul a {
 footer div#footer-wrapper div p {
   flex: 1;
   text-align: left;
+}
+
+footer div#footer-wrapper div p a {
+  color: white;
 }
 
 footer div#footer-wrapper div div#image-wrapper {

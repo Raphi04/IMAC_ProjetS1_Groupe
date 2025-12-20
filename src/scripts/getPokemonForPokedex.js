@@ -36,7 +36,7 @@ async function getPokedexPokemons() {
     const pokemonContainer = document.createElement("a");
     pokemonContainer.classList.add("pokemon-card-container");
     pokemonContainer.href =
-      "../../pages/pokemon_details.html?id=" + pokemonsInfos[i].id;
+      "../../pages/pokemon-details.html?id=" + pokemonsInfos[i].id;
 
     pokemonContainer.appendChild(
       createPokemonCardsHTML(pokemonsInfos[i], true)

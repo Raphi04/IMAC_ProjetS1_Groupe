@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../src/styles/pokemon_card.css" />
+    <link rel="stylesheet" href="../src/styles/pokemon-card.css" />
     <link rel="stylesheet" href="../src/styles/details.css" />
     <title>MariDex - Details</title>
     <link rel="icon" type="image/x-icon" href="../src/images/logo.png" />
   </head>
   <body>
-    <maridex-header images-path="../src/images/" pages-path="../"></maridex-header>
+    <maridex-header
+      images-path="../src/images/"
+      pages-path="../"
+    ></maridex-header>
 
     <main>
       <section id="introduction">
@@ -24,11 +27,23 @@
       </section>
     </main>
 
-    <maridex-footer images-path="../src/images/" pages-path="../"></maridex-footer>
+    <maridex-footer
+      images-path="../src/images/"
+      pages-path="../"
+    ></maridex-footer>
 
     <script type="module" src="../src/scripts/getDetailsFromID.js"></script>
-    <script type="module" src="../src/scripts/components/PokemonCard.js"></script>
-    <script type="module" src="../src/scripts/components/MariDexHeader.js"></script>
-    <script type="module" src="../src/scripts/components/MariDexFooter.js"></script>
+    <script
+      type="module"
+      src="../src/scripts/components/pokemon-card.js"
+    ></script>
+    <script
+      type="module"
+      src="../src/scripts/components/maridex-header.js"
+    ></script>
+    <script
+      type="module"
+      src="../src/scripts/components/maridex-footer.js"
+    ></script>
   </body>
 </html>
