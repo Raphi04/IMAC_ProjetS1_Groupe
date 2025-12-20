@@ -25,8 +25,24 @@ export async function getPokemonsById(list_number) {
   return all_pokemon;
 }
 
+export async function getPokemonSpecies(limit, offset) {
+   try {
+    const response = await fetch(apiurl + "pokemon-species/?limit=" + limit + "&offset=" + offset);
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP : ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Erreur lors de l'appel API :", error);
+  } 
+}
+
 export function createPokemonCardsHTML(pokemon_infos, with_name) {
   console.log(pokemon_infos);
+  
   const pokemon_card = document.createElement("pokemon-card");
   if (with_name) {
     pokemon_card.setAttribute("pokemon-name", pokemon_infos.name);

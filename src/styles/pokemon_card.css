@@ -1,9 +1,22 @@
-.pokemon-card-container {
+a.pokemon-card-container {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
   color: var(--font-color);
   text-decoration: none;
 }
 
-.pokemon-card {
+a.pokemon-card-container pokemon-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.pokemon-card {
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,98 +29,109 @@
   box-shadow: var(--main-box-shadow);
 }
 
-.pokemon-card p {
+div.pokemon-card p {
   font-size: 1rem;
+  text-align: center;
+  min-width: 0;
+  max-width: 100px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.pokemon-card .circle {
+div.pokemon-card p::first-letter {
+  text-transform: uppercase;
+}
+
+div.pokemon-card div.circle {
   position: relative;
   width: 75%;
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
 
-.pokemon-card .circle.bug {
+div.pokemon-card div.circle.bug {
   background: var(--bug-gradient);
 }
 
-.pokemon-card .circle.dark {
+div.pokemon-card div.circle.dark {
   background: var(--dark-gradient);
 }
 
-.pokemon-card .circle.dragon {
+div.pokemon-card div.circle.dragon {
   background: var(--dragon-gradient);
 }
 
-.pokemon-card .circle.electric {
+div.pokemon-card div.circle.electric {
   background: var(--electric-gradient);
 }
 
-.pokemon-card .circle.fairy {
+div.pokemon-card div.circle.fairy {
   background: var(--fairy-gradient);
 }
 
-.pokemon-card .circle.fighting {
+div.pokemon-card div.circle.fighting {
   background: var(--fighting-gradient);
 }
 
-.pokemon-card .circle.fire {
+div.pokemon-card div.circle.fire {
   background: var(--fire-gradient);
 }
 
-.pokemon-card .circle.flying {
+div.pokemon-card div.circle.flying {
   background: var(--flying-gradient);
 }
 
-.pokemon-card .circle.grass {
+div.pokemon-card div.circle.grass {
   background: var(--grass-gradient);
 }
 
-.pokemon-card .circle.ghost {
+div.pokemon-card div.circle.ghost {
   background: var(--ghost-gradient);
 }
 
-.pokemon-card .circle.grass {
+div.pokemon-card div.circle.grass {
   background: var(--grass-gradient);
 }
 
-.pokemon-card .circle.ground {
+div.pokemon-card div.circle.ground {
   background: var(--ground-gradient);
 }
 
-.pokemon-card .circle.grass {
+div.pokemon-card div.circle.grass {
   background: var(--grass-gradient);
 }
 
-.pokemon-card .circle.ice {
+div.pokemon-card div.circle.ice {
   background: var(--ice-gradient);
 }
 
-.pokemon-card .circle.normal {
+div.pokemon-card div.circle.normal {
   background: var(--normal-gradient);
 }
 
-.pokemon-card .circle.poison {
+div.pokemon-card div.circle.poison {
   background: var(--poison-gradient);
 }
 
-.pokemon-card .circle.psychic {
+div.pokemon-card div.circle.psychic {
   background: var(--psychic-gradient);
 }
 
-.pokemon-card .circle.rock {
+div.pokemon-card div.circle.rock {
   background: var(--rock-gradient);
 }
 
-.pokemon-card .circle.steel {
+div.pokemon-card div.circle.steel {
   background: var(--steel-gradient);
 }
 
-.pokemon-card .circle.water {
+div.pokemon-card div.circle.water {
   background: var(--water-gradient);
 }
 
-.pokemon-card .circle img {
+div.pokemon-card div.circle img {
   position: absolute;
   top: 50%;
   left: 50%;

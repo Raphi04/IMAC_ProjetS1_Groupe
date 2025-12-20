@@ -1,38 +1,3 @@
-main section#introduction {
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border-radius: 8px;
-  background: var(--green-gradient);
-  box-shadow: var(--main-box-shadow);
-}
-
-main section#introduction h2 {
-  font-size: 1rem;
-  font-family: "montserrat-semibold", serif;
-  color: white;
-}
-
-@media screen and (min-width: 1024px) {
-  main section#introduction h2 {
-    font-size: 1.2rem;
-  }
-}
-
-main section#introduction p {
-  font-size: 0.75rem;
-  font-family: "montserrat-light", serif;
-  color: white;
-}
-
-@media screen and (min-width: 1024px) {
-  main section#introduction p {
-    font-size: 1rem;
-  }
-}
-
 main form {
   width: 100%;
   display: flex;
@@ -43,6 +8,7 @@ main form {
 main form label {
   font-size: 1rem;
   font-family: "montserrat-regular", serif;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 1024px) {
@@ -103,12 +69,6 @@ main section#random-pokemon-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-main section#random-pokemon-container h2 {
-  font-size: 1rem;
-  font-family: "montserrat-regular", serif;
-  font-weight: 500;
 }
 
 main section#random-pokemon-container #pokemon-grid {

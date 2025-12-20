@@ -21,7 +21,8 @@ async function getRandomPokemons() {
 
   for (const pokemon_infos of pokemons_infos) {
     const pokemon_container = document.createElement("a");
-    pokemon_container.href = "../../pages/pokemon_details.html?id=" + pokemon_infos.id;
+    pokemon_container.href =
+      "../../pages/pokemon_details.html?id=" + pokemon_infos.id;
     pokemon_container.classList.add("pokemon-card-container");
     pokemon_container.appendChild(createPokemonCardsHTML(pokemon_infos, true));
 
@@ -33,7 +34,11 @@ const search_pokemon_form = document.forms["search_pokemon"];
 
 function search_pokemon(e) {
   e.preventDefault();
-  const pokemon_id = search_pokemon_form.elements["pokemon_id"].value;
+  let pokemon_id = search_pokemon_form.elements["pokemon_id"].value;
+
+  if (pokemon_id == "") {
+    pokemon_id = "1";
+  }
 
   document.location.replace("./pages/pokemon_details.html?id=" + pokemon_id);
 }

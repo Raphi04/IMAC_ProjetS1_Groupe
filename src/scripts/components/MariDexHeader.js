@@ -12,7 +12,7 @@ class MariDexHeader extends HTMLElement {
     //Création de l'attribut pages_path car les url des pages ne sont pas les mêmes partout
     const home_path = this.getAttribute("pages-path") + "index.html";
     const about_us_path = this.getAttribute("pages-path") + "pages/about_us.html";
-    const pokedex_path = this.getAttribute("pages-path") + "pages/pokedex.html";
+    const pokedex_path = this.getAttribute("pages-path") + "pages/pokedex.html?page=0";
 
     // Création de l'atribut images-path car les images ne sont pas accessibles de la même manière sur toutes les pages
     const logo_path = this.getAttribute("images-path") + "logo.png";

@@ -4,17 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../src/styles/accueil.css" />
+    <link rel="stylesheet" href="../src/styles/pokedex.css" />
+    <link rel="stylesheet" href="../src/styles/pokemon_card.css" />
     <title>MariDex - Pokédex</title>
     <link rel="icon" type="image/x-icon" href="../src/images/logo.png" />
   </head>
   <body>
-    <maridex-header images-path="../src/images/" pages-path="../"></maridex-header>
+    <maridex-header
+      images-path="../src/images/"
+      pages-path="../"
+    ></maridex-header>
 
-    <main></main>
+    <main>
+      <section id="introduction">
+        <h2>The Pokédex</h2>
+        <p>Find all Pokémons from the games !</p>
+      </section>
 
-    <maridex-footer images-path="../src/images/" pages-path="../"></maridex-footer>
-    <script type="module" src="../src/scripts/components/MariDexHeader.js"></script>
-    <script type="module" src="../src/scripts/components/MariDexFooter.js"></script>
+      <section id="pokedex">
+        <h2>Pokédex</h2>
+
+        <div id="pokedex-loading">
+          <img src="../src/images/loading.png" />
+        </div>
+
+        <div id="pokedex-wrapper" class="hidden">
+          <div class="pagination-buttons-container">
+            <button class="pagination-button previous">< Previous</button>
+            <button class="pagination-button next">Next ></button>
+          </div>
+
+          <div id="pokedex-grid"></div>
+
+          <div class="pagination-buttons-container">
+            <button class="pagination-button previous">< Previous</button>
+            <button class="pagination-button next">Next ></button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <maridex-footer
+      images-path="../src/images/"
+      pages-path="../"
+    ></maridex-footer>
+
+    <script type="module" src="../src/scripts/getPokemonForPokedex.js"></script>
+    <script
+      type="module"
+      src="../src/scripts/components/PokemonCard.js"
+    ></script>
+    <script
+      type="module"
+      src="../src/scripts/components/MariDexHeader.js"
+    ></script>
+    <script
+      type="module"
+      src="../src/scripts/components/MariDexFooter.js"
+    ></script>
   </body>
 </html>
