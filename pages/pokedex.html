@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MariDex - Pokédex</title>
+
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../src/styles/pokedex.css" />
     <link rel="stylesheet" href="../src/styles/pokemon-card.css" />
-    <title>MariDex - Pokédex</title>
     <link rel="icon" type="image/x-icon" href="../src/images/logo.png" />
   </head>
+
   <body>
     <maridex-header
       images-path="../src/images/"
@@ -17,7 +20,7 @@
 
     <main>
       <section id="introduction">
-        <h2>The Pokédex</h2>
+        <h1>THE POKÉDEX</h1>
         <p>Find all Pokémons from the games !</p>
       </section>
 
@@ -30,15 +33,15 @@
 
         <div id="pokedex-wrapper" class="hidden">
           <div class="pagination-buttons-container">
-            <button class="pagination-button previous">< Previous</button>
-            <button class="pagination-button next">Next ></button>
+            <button class="pagination-button previous">Previous</button>
+            <button class="pagination-button next">Next</button>
           </div>
 
           <div id="pokedex-grid"></div>
 
           <div class="pagination-buttons-container">
-            <button class="pagination-button previous">< Previous</button>
-            <button class="pagination-button next">Next ></button>
+            <button class="pagination-button previous">Previous</button>
+            <button class="pagination-button next">Next</button>
           </div>
         </div>
       </section>
@@ -49,15 +52,21 @@
       pages-path="../"
     ></maridex-footer>
 
-    <script type="module" src="../src/scripts/getPokemonForPokedex.js"></script>
+    <script
+      type="module"
+      src="../src/scripts/get-pokemon-for-pokedex.js"
+    ></script>
+
     <script
       type="module"
       src="../src/scripts/components/pokemon-card.js"
     ></script>
+
     <script
       type="module"
       src="../src/scripts/components/maridex-header.js"
     ></script>
+
     <script
       type="module"
       src="../src/scripts/components/maridex-footer.js"

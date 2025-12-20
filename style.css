@@ -328,7 +328,7 @@ main section#introduction h1 {
 }
 
 @media screen and (min-width: 1024px) {
-  main section#introduction h2 {
+  main section#introduction h1 {
     font-size: 1.2rem;
   }
 }
@@ -347,8 +347,7 @@ main section#introduction p {
 
 main section > h2 {
   font-size: 1rem;
-  font-family: "montserrat-regular", serif;
-  font-weight: 600;
+  font-family: "montserrat-semibold", serif;
 }
 
 /*----------------------------FOOTER----------------------------*/

@@ -1,0 +1,31 @@
+section#creators {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section#creators div {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f2f4f7;
+  box-shadow: var(--main-box-shadow);
+}
+
+section#creators div h2 {
+  font-size: 1rem;
+  font-family: "montserrat-semibold", serif;
+}
+
+section#creators div p {
+  font-size: 0.75rem;
+  font-family: "montserrat-regular", serif;
+}
+
+@media screen and (min-width: 1024px) {
+  section#creators div p {
+    font-size: 1rem;
+  }
+}

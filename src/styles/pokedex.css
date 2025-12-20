@@ -73,3 +73,9 @@ section#pokedex div#pokedex-wrapper div#pokedex-grid {
   grid-auto-rows: 1fr;
   gap: 1rem;
 }
+
+@media screen and (min-width: 768px) {
+  section#pokedex div#pokedex-wrapper div#pokedex-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

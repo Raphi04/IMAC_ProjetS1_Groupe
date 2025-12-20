@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
+
     <title>MariDex - About Us</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../src/styles/about-us.css" />
     <link rel="icon" type="image/x-icon" href="../src/images/logo.png" />
   </head>
   <body>
@@ -15,26 +18,38 @@
 
     <main>
       <section id="introduction">
-        <h2>CREDITS</h2>
-        <p>The authors</p>
+        <h1>THE CREDITS</h1>
+        <p>The authors of this website !</p>
       </section>
 
-      <h2>Raphael CADETE</h2>
-      <p>Project manager, developer, designer</p>
-      <h2>Chloé CHABAUD</h2>
-      <p>Developer, designer</p>
-      <h2>Matthieu FARANDJIS</h2>
-      <p>Developer, designer</p>
+      <section id="creators">
+        <div>
+          <h2>Raphael CADETE</h2>
+          <p>Project manager, developer, designer</p>
+        </div>
+
+        <div>
+          <h2>Chloé CHABAUD</h2>
+          <p>Developer, designer</p>
+        </div>
+
+        <div>
+          <h2>Matthieu FARANDJIS</h2>
+          <p>Developer, designer</p>
+        </div>
+      </section>
     </main>
 
     <maridex-footer
       images-path="../src/images/"
       pages-path="../"
     ></maridex-footer>
+
     <script
       type="module"
       src="../src/scripts/components/maridex-header.js"
     ></script>
+
     <script
       type="module"
       src="../src/scripts/components/maridex-footer.js"
