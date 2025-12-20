@@ -62,13 +62,13 @@ async function getPokedexPokemons() {
 
 function previousPage() {
   document.location.replace(
-    "../../pages/pokedex.html?page=" + (parseInt(pokedexPage) - 1)
+    "../pages/pokedex.html?page=" + (parseInt(pokedexPage) - 1)
   );
 }
 
 function nextPage() {
   document.location.replace(
-    "../../pages/pokedex.html?page=" + (parseInt(pokedexPage) + 1)
+    "../pages/pokedex.html?page=" + (parseInt(pokedexPage) + 1)
   );
 }
 

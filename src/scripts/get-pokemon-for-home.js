@@ -22,7 +22,7 @@ async function getRandomPokemons() {
   for (const pokemonInfos of pokemonsInfos) {
     const pokemonContainer = document.createElement("a");
     pokemonContainer.href =
-      "../../pages/pokemon-details.html?id=" + pokemonInfos.id;
+      "pages/pokemon-details.html?id=" + pokemonInfos.id;
     pokemonContainer.classList.add("pokemon-card-container");
     pokemonContainer.appendChild(createPokemonCardsHTML(pokemonInfos, true));
 
