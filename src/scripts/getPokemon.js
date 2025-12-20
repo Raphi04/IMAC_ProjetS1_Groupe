@@ -60,8 +60,7 @@ export async function getPokemonSpecies(limit, offset) {
 }
 
 export function createPokemonCardsHTML(pokemon_infos, with_name) {
-  console.log(pokemon_infos);
-  
+
   const pokemon_card = document.createElement("pokemon-card");
   if (with_name) {
     pokemon_card.setAttribute("pokemon-name", pokemon_infos.name);
