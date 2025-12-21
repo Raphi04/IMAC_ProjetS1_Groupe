@@ -7,7 +7,7 @@ async function displayPokemonDetails() {
   let pokemonId = new URLSearchParams(window.location.search).get("id");
 
   if (pokemonId > 1025) {
-    pokemonId = 1;
+    document.location.replace("../pages/pokemon-details.html?id=650");
   }
 
   const pokemonInfosBattle = await getPokemonByIdInfosBattle(pokemonId);
