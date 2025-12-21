@@ -77,20 +77,26 @@ function createPokemonTypesHTML(
   pokemon_infos_battle,
   pokemon_details_container
 ) {
-  const pokemon_types_container = document.createElement("div");
-
-  // Le titre de la div du type du Pokémon
-  const pokemon_types_title = document.createElement("h3");
-  pokemon_types_title.innerText = "Pokémon Type(s)";
-  pokemon_types_container.appendChild(pokemon_types_title);
-
-  // Les types du Pokémon
-  const pokemon_types = document.createElement("p");
 
   const pokemon_types_value = [];
   pokemon_infos_battle.types.forEach((type) => {
     pokemon_types_value.push(type.type.name);
   });
+
+  const pokemon_types_container = document.createElement("div");
+
+  // Le titre de la div du type du Pokémon
+  const pokemon_types_title = document.createElement("h3");
+
+  if (pokemon_types_value.length === 1) { pokemon_types_title.innerText = "Pokémon Type";}
+  else { pokemon_types_title.innerText = "Pokémon Types";}
+
+  pokemon_types_container.appendChild(pokemon_types_title);
+
+  // Les types du Pokémon
+  const pokemon_types = document.createElement("p");
+
+
   pokemon_types.innerText = pokemon_types_value.join(", ");
   pokemon_types_container.appendChild(pokemon_types);
 
