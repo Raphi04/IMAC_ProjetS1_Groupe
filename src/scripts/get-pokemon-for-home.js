@@ -1,4 +1,4 @@
-import { getPokemonsById, createPokemonCardsHTML } from "./getPokemon.js";
+import { getPokemonsById, createPokemonCardsHTML } from "./get-pokemon.js";
 
 function randomNumber(count, max, min) {
   let listNumber = [];
@@ -21,8 +21,7 @@ async function getRandomPokemons() {
 
   for (const pokemonInfos of pokemonsInfos) {
     const pokemonContainer = document.createElement("a");
-    pokemonContainer.href =
-      "pages/pokemon-details.html?id=" + pokemonInfos.id;
+    pokemonContainer.href = "pages/pokemon-details.html?id=" + pokemonInfos.id;
     pokemonContainer.classList.add("pokemon-card-container");
     pokemonContainer.appendChild(createPokemonCardsHTML(pokemonInfos, true));
 
