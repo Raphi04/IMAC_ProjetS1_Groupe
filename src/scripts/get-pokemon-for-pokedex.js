@@ -17,7 +17,9 @@ async function getPokedexPokemons() {
   //Récupération des Pokémons
 
   if (pokedexPage > Math.floor(1025 / 40)) {
-    document.location.replace("../../pages/pokedex.html?page=0");
+    document.location.replace(
+      "../pages/pokedex.html?page=" + Math.floor(1025 / 40)
+    );
   }
 
   const data = await getPokemonSpecies(40, pokedexPage * 40);
@@ -36,7 +38,7 @@ async function getPokedexPokemons() {
     const pokemonContainer = document.createElement("a");
     pokemonContainer.classList.add("pokemon-card-container");
     pokemonContainer.href =
-      "../../pages/pokemon-details.html?id=" + pokemonsInfos[i].id;
+      ".pages/pokemon-details.html?id=" + pokemonsInfos[i].id;
 
     pokemonContainer.appendChild(
       createPokemonCardsHTML(pokemonsInfos[i], true)

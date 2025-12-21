@@ -4,7 +4,12 @@ import {
 } from "./get-pokemon.js";
 
 async function displayPokemonDetails() {
-  const pokemonId = new URLSearchParams(window.location.search).get("id");
+  let pokemonId = new URLSearchParams(window.location.search).get("id");
+
+  if (pokemonId > 1025) {
+    pokemonId = 1;
+  }
+
   const pokemonInfosBattle = await getPokemonByIdInfosBattle(pokemonId);
   const pokemonInfosOrganic = await getPokemonByIdInfosOrganic(pokemonId);
 
