@@ -4,14 +4,26 @@ main #pokemon-details {
   gap: 1rem;
 }
 
+/*REMARQUE : cela complémente ce qu'il y a dans style.css concernant section > h2 (ici c'est dédié au nom du Pokémon)*/
+#pokemon-details-head h2::first-letter {
+  text-transform: uppercase;
+}
+
 @media screen and (min-width: 768px) {
   main #pokemon-details {
     flex-direction: row;
+    align-items: center;
+  }
+
+  main #pokemon-details #pokemon-details-infos {
+    padding-left : 20px;
+    padding-top: 50px;
   }
 }
 
 main #pokemon-details #pokemon-details-head {
   width: 100%;
+  max-width: 28rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
