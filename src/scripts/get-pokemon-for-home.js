@@ -27,6 +27,9 @@ async function getRandomPokemons() {
 
     document.getElementById("pokemon-grid").appendChild(pokemonContainer);
   }
+
+  document.getElementById("random-pokemon-loading").classList.add("hidden");
+  document.getElementById("pokemon-grid").classList.remove("hidden");
 }
 
 const searchPokemonForm = document.forms["searchPokemon"];

@@ -1,3 +1,13 @@
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 main form {
   width: 100%;
   display: flex;
@@ -68,6 +78,26 @@ main section#random-pokemon-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+main section#random-pokemon-container div.hidden {
+  display: none !important;
+}
+
+main section#random-pokemon-container div#random-pokemon-loading {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main section#random-pokemon-container div#random-pokemon-loading img {
+  width: 30px;
+  aspect-ratio: 1/1;
+  animation: loading 1s linear infinite;
 }
 
 main section#random-pokemon-container #pokemon-grid {
