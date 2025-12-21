@@ -24,18 +24,18 @@ class MariDexFooter extends HTMLElement {
         <div id="footer-wrapper">
           <div>
             <section>
-              <h3>Plan du site</h3>
+              <h3>Site map</h3>
               <nav>
                 <ul>
-                  <li><a href="${homePath}">Accueil</a></li>
-                  <li><a href="${aboutUsPath}">A&nbsp;propos</a></li>
+                  <li><a href="${homePath}">Home</a></li>
+                  <li><a href="${aboutUsPath}">About&nbsp;Us</a></li>
                   <li><a href="${pokedexPath}">Pokédex</a></li>
                 </ul>
               </nav>
             </section>
 
             <p>
-              Ce site a été créé à l'occasion d'un projet de premier semestre de <a href="https://www.esiee.fr/formations/ingenieur/filieres/imac" target="_blank" title="Nouvel Onglet - Site de l'IMAC">la formation IMAC</a>.
+              This site was created as part of a first semester project of the <a href="https://www.esiee.fr/formations/ingenieur/filieres/imac" target="_blank" title="New Tab - IMAC Website"> IMAC training program</a>.
             </p>
             
             <div id="image-wrapper">
@@ -43,7 +43,7 @@ class MariDexFooter extends HTMLElement {
             </div>
           </div>
 
-          <p>© Tous droits réservés - MariDex 2025</p>
+          <p>© All rights reserved - MariDex 2025</p>
         </div>
       </footer>
     `;

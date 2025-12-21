@@ -4,156 +4,143 @@ import {
 } from "./get-pokemon.js";
 
 async function displayPokemonDetails() {
-  const pokemon_id = new URLSearchParams(window.location.search).get("id");
-  const pokemon_infos_battle = await getPokemonByIdInfosBattle(pokemon_id);
-  const pokemon_infos_organic = await getPokemonByIdInfosOrganic(pokemon_id);
+  const pokemonId = new URLSearchParams(window.location.search).get("id");
+  const pokemonInfosBattle = await getPokemonByIdInfosBattle(pokemonId);
+  const pokemonInfosOrganic = await getPokemonByIdInfosOrganic(pokemonId);
 
-  const pokemon_details_head = document.getElementById("pokemon-details-head");
-  const pokemon_details_infos = document.getElementById(
-    "pokemon-details-infos"
-  );
+  const pokemonDetailsHead = document.getElementById("pokemon-details-head");
+  const pokemonDetailsInfos = document.getElementById("pokemon-details-infos");
 
-  createPokemonNameHTML(pokemon_infos_battle, pokemon_details_head);
-  createPokemonImageHTML(pokemon_infos_battle, pokemon_details_head);
+  createPokemonNameHTML(pokemonInfosBattle, pokemonDetailsHead);
+  createPokemonImageHTML(pokemonInfosBattle, pokemonDetailsHead);
 
-  createPokemonDescriptionHTML(pokemon_infos_organic, pokemon_details_infos);
-  createPokemonTypesHTML(pokemon_infos_battle, pokemon_details_infos);
-  createPokemonStatsHTML(pokemon_infos_battle, pokemon_details_infos);
-  createPokemonMorphologyHTML(pokemon_infos_battle, pokemon_details_infos);
+  createPokemonDescriptionHTML(pokemonInfosOrganic, pokemonDetailsInfos);
+  createPokemonTypesHTML(pokemonInfosBattle, pokemonDetailsInfos);
+  createPokemonStatsHTML(pokemonInfosBattle, pokemonDetailsInfos);
+  createPokemonMorphologyHTML(pokemonInfosBattle, pokemonDetailsInfos);
 }
 
 // Le nom du Pokémon
-function createPokemonNameHTML(
-  pokemon_infos_battle,
-  pokemon_details_container
-) {
-  const pokemon_name = document.createElement("h2");
-  pokemon_name.innerText = pokemon_infos_battle.name;
-  pokemon_details_container.appendChild(pokemon_name);
+function createPokemonNameHTML(pokemonInfosBattle, pokemonDetailsContainer) {
+  const pokemonName = document.createElement("h2");
+  pokemonName.innerText = pokemonInfosBattle.name;
+  pokemonDetailsContainer.appendChild(pokemonName);
 }
 
 // L'image du Pokémon
-function createPokemonImageHTML(
-  pokemon_infos_battle,
-  pokemon_details_container
-) {
-  const pokemon_card = document.createElement("pokemon-card");
-  pokemon_card.setAttribute(
+function createPokemonImageHTML(pokemonInfosBattle, pokemonDetailsContainer) {
+  const pokemonCard = document.createElement("pokemon-card");
+  pokemonCard.setAttribute(
     "pokemon-url",
-    pokemon_infos_battle.sprites.front_default
+    pokemonInfosBattle.sprites.front_default
   );
-  pokemon_card.setAttribute(
+  pokemonCard.setAttribute(
     "pokemon-type",
-    pokemon_infos_battle.types[0].type.name
+    pokemonInfosBattle.types[0].type.name
   );
-  pokemon_details_container.appendChild(pokemon_card);
+  pokemonDetailsContainer.appendChild(pokemonCard);
 }
 
 // la description du pokémon
 function createPokemonDescriptionHTML(
-  pokemon_infos_organic,
-  pokemon_details_container
+  pokemonInfosOrganic,
+  pokemonDetailsContainer
 ) {
-  const pokemon_description_container = document.createElement("div");
-  const pokemon_description_title = document.createElement("h3");
-  pokemon_description_title.innerText = "Description";
-  pokemon_description_container.appendChild(pokemon_description_title);
+  const pokemonDescriptionContainer = document.createElement("div");
+  const pokemonDescriptionTitle = document.createElement("h3");
+  pokemonDescriptionTitle.innerText = "Description";
+  pokemonDescriptionContainer.appendChild(pokemonDescriptionTitle);
 
-  const pokemon_description = document.createElement("p");
+  const pokemonDescription = document.createElement("p");
 
   // la description du pokémon
-  const pokemon_description_text = pokemon_infos_organic.flavor_text_entries
+  const pokemonDescriptionText = pokemonInfosOrganic.flavor_text_entries
     .find((entry) => entry.language.name === "en")
     .flavor_text.replace(/[\n\f]/g, " "); // Remplace les sauts de ligne par des espaces
 
-  pokemon_description.textContent = pokemon_description_text;
-  pokemon_description_container.appendChild(pokemon_description);
+  pokemonDescription.textContent = pokemonDescriptionText;
+  pokemonDescriptionContainer.appendChild(pokemonDescription);
 
-  pokemon_details_container.appendChild(pokemon_description_container);
+  pokemonDetailsContainer.appendChild(pokemonDescriptionContainer);
 }
 
 // La div du type du Pokémon
-function createPokemonTypesHTML(
-  pokemon_infos_battle,
-  pokemon_details_container
-) {
-
-  const pokemon_types_value = [];
-  pokemon_infos_battle.types.forEach((type) => {
-    pokemon_types_value.push(type.type.name);
+function createPokemonTypesHTML(pokemonInfosBattle, pokemonDetailsContainer) {
+  const pokemonTypesValue = [];
+  pokemonInfosBattle.types.forEach((type) => {
+    pokemonTypesValue.push(type.type.name);
   });
 
-  const pokemon_types_container = document.createElement("div");
+  const pokemonTypesContainer = document.createElement("div");
 
   // Le titre de la div du type du Pokémon
-  const pokemon_types_title = document.createElement("h3");
+  const pokemonTypesTitle = document.createElement("h3");
 
-  if (pokemon_types_value.length === 1) { pokemon_types_title.innerText = "Pokémon Type";}
-  else { pokemon_types_title.innerText = "Pokémon Types";}
+  if (pokemonTypesValue.length === 1) {
+    pokemonTypesTitle.innerText = "Pokémon Type";
+  } else {
+    pokemonTypesTitle.innerText = "Pokémon Types";
+  }
 
-  pokemon_types_container.appendChild(pokemon_types_title);
+  pokemonTypesContainer.appendChild(pokemonTypesTitle);
 
   // Les types du Pokémon
-  const pokemon_types = document.createElement("p");
+  const pokemonTypes = document.createElement("p");
 
+  pokemonTypes.innerText = pokemonTypesValue.join(", ");
+  pokemonTypesContainer.appendChild(pokemonTypes);
 
-  pokemon_types.innerText = pokemon_types_value.join(", ");
-  pokemon_types_container.appendChild(pokemon_types);
-
-  pokemon_details_container.appendChild(pokemon_types_container);
+  pokemonDetailsContainer.appendChild(pokemonTypesContainer);
 }
 
 // La div des stats du Pokémon
-function createPokemonStatsHTML(
-  pokemon_infos_battle,
-  pokemon_details_container
-) {
-  const pokemon_stats_container = document.createElement("div");
+function createPokemonStatsHTML(pokemonInfosBattle, pokemonDetailsContainer) {
+  const pokemonStatsContainer = document.createElement("div");
 
   // Le titre de la div des stats du Pokémon
-  const pokemon_stats_title = document.createElement("h3");
-  pokemon_stats_title.innerText = "Statistics";
-  pokemon_stats_container.appendChild(pokemon_stats_title);
+  const pokemonStatsTitle = document.createElement("h3");
+  pokemonStatsTitle.innerText = "Statistics";
+  pokemonStatsContainer.appendChild(pokemonStatsTitle);
 
-  const pokemon_stats_list = document.createElement("ul");
-  pokemon_stats_container.appendChild(pokemon_stats_list);
+  const pokemonStatsList = document.createElement("ul");
+  pokemonStatsContainer.appendChild(pokemonStatsList);
 
   // Les stats du Pokémon
-  pokemon_infos_battle.stats.forEach((stat) => {
-    const pokemon_stat = document.createElement("li");
-    pokemon_stat.innerText = stat.stat.name + ": " + stat.base_stat;
-    pokemon_stats_list.appendChild(pokemon_stat);
+  pokemonInfosBattle.stats.forEach((stat) => {
+    const pokemonStat = document.createElement("li");
+    pokemonStat.innerText = stat.stat.name + ": " + stat.base_stat;
+    pokemonStatsList.appendChild(pokemonStat);
   });
-  pokemon_details_container.appendChild(pokemon_stats_container);
+  pokemonDetailsContainer.appendChild(pokemonStatsContainer);
 }
 
 // La div de la morphologie du Pokémon
 function createPokemonMorphologyHTML(
-  pokemon_infos_battle,
-  pokemon_details_container
+  pokemonInfosBattle,
+  pokemonDetailsContainer
 ) {
-  const pokemon_morphology_container = document.createElement("div");
+  const pokemonMorphologyContainer = document.createElement("div");
 
   // Le titre de la div de la morphologie du Pokémon
-  const pokemon_morphology_title = document.createElement("h3");
-  pokemon_morphology_title.innerText = "Morphology";
-  pokemon_morphology_container.appendChild(pokemon_morphology_title);
+  const pokemonMorphologyTitle = document.createElement("h3");
+  pokemonMorphologyTitle.innerText = "Morphology";
+  pokemonMorphologyContainer.appendChild(pokemonMorphologyTitle);
 
-  const pokemon_morphology_list = document.createElement("ul");
-  pokemon_morphology_container.appendChild(pokemon_morphology_list);
+  const pokemonMorphologyList = document.createElement("ul");
+  pokemonMorphologyContainer.appendChild(pokemonMorphologyList);
 
   // La morphologie du Pokémon
-  const pokemon_morphology_height = document.createElement("li");
-  pokemon_morphology_height.innerHTML =
-    "Height : " + pokemon_infos_battle.height / 10 + "m";
-  pokemon_morphology_list.appendChild(pokemon_morphology_height);
+  const pokemonMorphologyHeight = document.createElement("li");
+  pokemonMorphologyHeight.innerHTML =
+    "Height : " + pokemonInfosBattle.height / 10 + "m";
+  pokemonMorphologyList.appendChild(pokemonMorphologyHeight);
 
-  const pokemon_morphology_weight = document.createElement("li");
-  pokemon_morphology_weight.innerHTML =
-    "Weight : " + pokemon_infos_battle.weight / 10 + "kg";
-  pokemon_morphology_list.appendChild(pokemon_morphology_weight);
+  const pokemonMorphologyWeight = document.createElement("li");
+  pokemonMorphologyWeight.innerHTML =
+    "Weight : " + pokemonInfosBattle.weight / 10 + "kg";
+  pokemonMorphologyList.appendChild(pokemonMorphologyWeight);
 
-  pokemon_details_container.appendChild(pokemon_morphology_container);
+  pokemonDetailsContainer.appendChild(pokemonMorphologyContainer);
 }
 
 displayPokemonDetails();

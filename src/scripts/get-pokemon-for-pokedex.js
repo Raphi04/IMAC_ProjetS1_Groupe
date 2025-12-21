@@ -2,7 +2,7 @@ import {
   getPokemonSpecies,
   getPokemonsById,
   createPokemonCardsHTML,
-} from "./getPokemon.js";
+} from "./get-pokemon.js";
 
 const previousButtons = document.querySelectorAll(
   ".pagination-button.previous"
